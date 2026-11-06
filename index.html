@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="旅行行程" />
+    <meta name="description" content="手机优先、离线可用的旅行行程规划 PWA" />
+    <link rel="manifest" href="./manifest.webmanifest?v=17" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <link rel="icon" href="./icons/icon-192.png" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css?v=17" />
+    <title>旅行行程</title>
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header id="topbar" class="topbar" aria-live="polite"></header>
+      <main id="view" class="view"></main>
+      <nav class="tabbar" aria-label="主导航">
+        <button class="tab-button" data-tab="today" type="button" aria-label="今天">
+          <i data-lucide="sun-medium"></i>
+          <span>今天</span>
+        </button>
+        <button class="tab-button" data-tab="itinerary" type="button" aria-label="全部行程">
+          <i data-lucide="list-checks"></i>
+          <span>全部行程</span>
+        </button>
+        <button class="tab-button" data-tab="map" type="button" aria-label="地图">
+          <i data-lucide="map"></i>
+          <span>地图</span>
+        </button>
+        <button class="tab-button" data-tab="settings" type="button" aria-label="设置">
+          <i data-lucide="settings-2"></i>
+          <span>设置</span>
+        </button>
+      </nav>
+    </div>
+
+    <div id="sheetBackdrop" class="sheet-backdrop" hidden></div>
+    <section id="bottomSheet" class="bottom-sheet" aria-modal="true" role="dialog" hidden></section>
+    <div id="toast" class="toast" role="status" hidden></div>
+    <div id="confirmDialog" class="confirm-backdrop" hidden>
+      <div class="confirm-dialog">
+        <h3 id="confirmTitle">确认操作</h3>
+        <p id="confirmMessage"></p>
+        <div class="confirm-actions">
+          <button id="confirmCancel" class="button ghost" type="button">取消</button>
+          <button id="confirmOk" class="button danger" type="button">确认</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="./amap-config.js?v=22"></script>
+    <script src="./app.js?v=22"></script>
+  </body>
+</html>

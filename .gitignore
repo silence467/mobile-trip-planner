@@ -1,0 +1,31 @@
+# Local tools and deployment output
+node_modules/
+.vercel/
+.netlify/
+dist/
+发布包/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+amap-config.js
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local exports
+*-trip-backup-*.json
+*私人备份/
+*私人备份.json
